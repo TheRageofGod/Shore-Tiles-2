@@ -33,7 +33,7 @@ public class Board : MonoBehaviour
 
         RaycastHit info;
         Ray ray = currentCamera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out info, 1000, LayerMask.GetMask("Tile")))
+        if (Physics.Raycast(ray, out info, 1000, LayerMask.GetMask("Tile","Hover")))
         {
             //get Index of selected Tile
             Vector2Int hitPosition = LookupTileIndex(info.transform.gameObject);

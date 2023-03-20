@@ -10,12 +10,12 @@ public class CrabSpawner : MonoBehaviour
 
     public void Update()
     {
-        Debug.Log(Time.time);
+        //Debug.Log(Time.time);
         foreach (Crab crab in crabs)
         {
             if (crab.isSpawned == false && crab.spawnTime <= Time.time)
             {
-
+                Debug.Log("CrabSpawned");
                GameObject crabInstance = Instantiate(CrabPreFab[(int)crab.crabTypes], transform.GetChild(crab.spawner).transform);
                 crab.isSpawned = true;
             }

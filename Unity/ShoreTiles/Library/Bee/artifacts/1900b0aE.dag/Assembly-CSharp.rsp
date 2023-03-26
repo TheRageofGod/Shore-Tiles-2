@@ -365,11 +365,14 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/Scripts/Attacks.cs"
 "Assets/Scripts/Cards.cs"
+"Assets/Scripts/Deploy.cs"
 "Assets/Scripts/Enemy.cs"
+"Assets/Scripts/GameManager.cs"
 "Assets/Scripts/Old/Board.cs"
 "Assets/Scripts/Reasorce_Generator.cs"
-"Assets/Scripts/Unit 1.cs"
+"Assets/Scripts/Round.cs"
 -langversion:9.0
 
 /deterministic

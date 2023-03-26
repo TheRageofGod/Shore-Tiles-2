@@ -15,4 +15,8 @@ public class Reasorce_Generator : MonoBehaviour
     {
         
     }
+   public void Generate()
+    {
+
+    }
 }

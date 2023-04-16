@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
         if (phase == Phase.PLAYERPHASE) { PlayerPhase(); }
         if (phase == Phase.ENEMYPHASE) { EnemyPhase(); }
         if (phase == Phase.END) { EndPhase(); }
+        Reasorces = generator.Reasorces;
     }
 
     private void EndPhase()
@@ -45,6 +46,10 @@ public class GameManager : MonoBehaviour
         if (EnemyCount <= 0)
         {
             round.NextRound();
+        }
+        else
+        {
+            phase = Phase.DEPLOY;
         }
     }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Reasorce_Generator : MonoBehaviour
 {
+    public int Reasorces;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,6 @@ public class Reasorce_Generator : MonoBehaviour
     }
    public void Generate()
     {
-
+        Reasorces = Reasorces + 1;
     }
 }

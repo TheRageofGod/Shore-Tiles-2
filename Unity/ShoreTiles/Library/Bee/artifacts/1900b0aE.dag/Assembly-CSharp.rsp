@@ -370,14 +370,12 @@
 "Assets/Scripts/CrabController.cs"
 "Assets/Scripts/CrabSpawner.cs"
 "Assets/Scripts/Deploy.cs"
+"Assets/Scripts/Drag.cs"
 "Assets/Scripts/Enemy.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/ObjectContainer.cs"
 "Assets/Scripts/Reasorce_Generator.cs"
 "Assets/Scripts/Round.cs"
-"Assets/Scripts/SoldierCard.cs"
-"Assets/Scripts/SoldierDrag.cs"
-"Assets/Scripts/SoldierGame.cs"
 "Assets/Scripts/SpawnPoint.cs"
 -langversion:9.0
 

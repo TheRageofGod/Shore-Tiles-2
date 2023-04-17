@@ -5,10 +5,7 @@ using UnityEngine;
 public enum Phase { DEPLOY, PLAYERPHASE, ENEMYPHASE, END }
 public class GameManager : MonoBehaviour
 {
-    public GameObject draggingObject;
-    public GameObject currentContainer;
-    public SoldierGame Game;
-
+ 
     public static GameManager instance;
 
     public Phase phase;
@@ -70,19 +67,9 @@ public class GameManager : MonoBehaviour
     private void Deploy()
     {
         generator.Generate();
-        Debug.Log(RoundCounter);
-        Debug.Log(Reasorces);
         deployAccess = true;
+        movementAccess = true;
 
     }
-    public void PlaceObject()
-    {
-        if(draggingObject != null && currentContainer !=null)
-        {
-            Instantiate(draggingObject.GetComponent<SoldierDrag>().card.object_Game, currentContainer.transform);
-            currentContainer.GetComponent<ObjectContainer>().isFull = true;
-           
-            //Debug.Log("soldier deployed");
-        }
-    }
+   
 }

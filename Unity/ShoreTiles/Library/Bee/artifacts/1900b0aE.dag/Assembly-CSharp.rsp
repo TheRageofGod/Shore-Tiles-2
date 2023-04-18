@@ -373,6 +373,7 @@
 "Assets/Scripts/Drag.cs"
 "Assets/Scripts/Enemy.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/NewDrag.cs"
 "Assets/Scripts/ObjectContainer.cs"
 "Assets/Scripts/Reasorce_Generator.cs"
 "Assets/Scripts/Round.cs"

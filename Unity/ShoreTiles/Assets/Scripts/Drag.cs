@@ -6,10 +6,15 @@ public class Drag : MonoBehaviour
 {
     private Vector3 offset;
     public bool isDragging;
+    public GameManager Gm;
     //public Camera cam;
-    //public GameManager manager;
+   
 
-    
+    public void Start()
+    {
+        Gm = FindObjectOfType<GameManager>();
+    }
+
     void Update()
     {
         transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);

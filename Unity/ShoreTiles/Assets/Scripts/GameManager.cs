@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public int Reasorces;
     public int EnemyCount;
 
+    public bool isDragging;
+
     public bool deployAccess = false;
     public bool movementAccess = false;
     public bool attackAccess = false;
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         round.NextRound();
+        
     }
 
     void Update()
@@ -48,6 +51,7 @@ public class GameManager : MonoBehaviour
         {
             phase = Phase.DEPLOY;
         }
+        generator.GenCount = 0;
     }
 
     private void EnemyPhase()
@@ -71,5 +75,6 @@ public class GameManager : MonoBehaviour
         movementAccess = true;
 
     }
+    
    
 }

@@ -15,11 +15,7 @@ public class Deploy : MonoBehaviour
 
     public GameManager Gm;
     public Reasorce_Generator RG;
-    void Start()
-    {
-        // Add an event listener for the spawn button
-        spawnButton.onClick.AddListener(SpawnObject);
-    }
+   
 
     void Update()
     {
@@ -27,7 +23,7 @@ public class Deploy : MonoBehaviour
         {
             spawnButton.interactable = false; spawnButton.enabled = false;
         }
-        if (Gm.deployAccess == true && RG.Reasorces >= 3)
+        else if (Gm.deployAccess == true && RG.Reasorces >= 3)
         {
             spawnButton.interactable = true; spawnButton.enabled = true;
         }
@@ -39,6 +35,7 @@ public class Deploy : MonoBehaviour
         // Instantiate the objectToSpawn and set it as the spawnedObject
         spawnedObject = Instantiate(objectToSpawn);
         spawnedObject.transform.SetParent(Parent);
+        
     }
    
 }

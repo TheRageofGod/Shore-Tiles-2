@@ -5,19 +5,13 @@ using UnityEngine;
 public class Reasorce_Generator : MonoBehaviour
 {
     public int Reasorces;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int GenCount;
    public void Generate()
     {
-        Reasorces = Reasorces + 1;
+        if (GenCount <= 0)
+        {
+            Reasorces = Reasorces + 1;
+            GenCount =  1;
+        }
     }
 }

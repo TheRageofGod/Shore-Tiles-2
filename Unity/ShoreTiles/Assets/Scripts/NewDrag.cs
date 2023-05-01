@@ -6,6 +6,7 @@ public class NewDrag : MonoBehaviour
 {
   
     public GameManager Gm;
+    public SquareSelect Ss;
     public Vector3 SavePoint;
     public int count;
 
@@ -14,12 +15,15 @@ public class NewDrag : MonoBehaviour
     public bool movement = true;
 
     public Vector3 releasePoint;
+    public Vector3 nullPoint;
     public bool placed = false;
     public GameObject[] detectPoints;
+    public bool instance = false;
     
     public void Start()
     {
         Gm = FindObjectOfType<GameManager>();
+        Ss = FindObjectOfType<SquareSelect>();
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         
     }
@@ -42,11 +46,13 @@ public class NewDrag : MonoBehaviour
                 {
                     Debug.Log("Hit");
                     Gm.isDragging = true;
-                    
+                    nullPoint = transform.position;
+
                 }
                 if (Gm.isDragging == true && movement == true)
                 {
                     hit.transform.position = GetMousePos();
+                    Ss.spaceChecker.transform.position = transform.position;
 
                 }
 
@@ -58,8 +64,10 @@ public class NewDrag : MonoBehaviour
         {
             if (Gm.isDragging == false)
             {
+                
                 transform.position = releasePoint;
-                placed = true;/*Gm.snapPoint[Gm.snapPoint.Count - 1];*/
+                placed = true;
+                Gm.instanced = false;
             }
             
         }
@@ -81,21 +89,25 @@ public class NewDrag : MonoBehaviour
             if(other.GetComponent<BoardPoint>().validPoint)
             {
                 releasePoint = other.transform.position;
+                
             }
-
+            if (other.GetComponent<BoardPoint>().validPoint == false)
+            {
+                releasePoint = nullPoint;
+            }
         }
 
     }
     private void OnMouseUp()
     {
         Gm.isDragging = false;
+      
 
     }
     private void OnMouseDrag()
     {
-
         transform.position = GetMousePos();
-        //Gm.snapPoint = GetMousePos();
+        
         Gm.isDragging = true;
 
     }
@@ -106,4 +118,6 @@ public class NewDrag : MonoBehaviour
         mousePos.z = Camera.main.nearClipPlane;
         return mousePos;
     }
+
+
 }

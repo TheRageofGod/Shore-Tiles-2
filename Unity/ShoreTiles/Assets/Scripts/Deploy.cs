@@ -10,6 +10,7 @@ public class Deploy : MonoBehaviour
     public GameObject objectToSpawn;
     public Button spawnButton;
     private GameObject spawnedObject;
+    public int nameInt;
     
     
 
@@ -35,7 +36,10 @@ public class Deploy : MonoBehaviour
         // Instantiate the objectToSpawn and set it as the spawnedObject
         spawnedObject = Instantiate(objectToSpawn);
         spawnedObject.transform.SetParent(Parent);
+        nameInt = nameInt + 1;
+        spawnedObject.gameObject.name = "Soldier" + nameInt;
         
+        Gm.instanced = true;
     }
    
 }

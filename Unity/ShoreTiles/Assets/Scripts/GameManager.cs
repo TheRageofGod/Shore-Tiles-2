@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     public bool movementAccess = false;
     public bool attackAccess = false;
 
+    public bool instanced = false;
+
     private void Awake()
     {
         instance = this;

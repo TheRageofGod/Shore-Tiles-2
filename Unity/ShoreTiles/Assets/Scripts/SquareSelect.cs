@@ -7,5 +7,8 @@ public class SquareSelect : MonoBehaviour
     public bool value2;
     public bool value1;
 
+    public GameObject spaceChecker;
+
+
 
 }

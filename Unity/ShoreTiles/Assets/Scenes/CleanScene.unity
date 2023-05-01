@@ -2331,6 +2331,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Square (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 667071459422371010, guid: a991df1f29e1b734c984d94bb030f32a, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a991df1f29e1b734c984d94bb030f32a, type: 3}
 --- !u!1001 &1080435858
@@ -3932,7 +3936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 1855569862}
-  objectToSpawn: {fileID: 1072638366606813324, guid: 7ab7f056cda526749a8aa8be73d497c1, type: 3}
+  objectToSpawn: {fileID: 1107387534454381498, guid: a63022e1dc8bdeb478f0da6de980c6e1, type: 3}
   spawnButton: {fileID: 1738429191}
   Gm: {fileID: 1926943117}
   RG: {fileID: 1466647237}
@@ -4265,8 +4269,7 @@ MonoBehaviour:
   RoundCounter: 0
   Reasorces: 0
   EnemyCount: 0
-  snapPoint: []
-  SnapPointDefault: {fileID: 410012996}
+  UnitColl: 0
   isDragging: 0
   deployAccess: 0
   movementAccess: 0

@@ -9,8 +9,13 @@ public class NewDrag : MonoBehaviour
     public Vector3 SavePoint;
     public int count;
 
+    public int movementValue = 2;
+    public int moves = 0;
+    public bool movement = true;
+
     public Vector3 releasePoint;
     public bool placed = false;
+    public GameObject[] detectPoints;
     
     public void Start()
     {
@@ -20,6 +25,10 @@ public class NewDrag : MonoBehaviour
     }
     public void Update()
     {
+        if(moves >= movementValue)
+        {
+            movement = false;
+        }
         
         if (Input.GetMouseButtonDown(0))
         {
@@ -35,7 +44,7 @@ public class NewDrag : MonoBehaviour
                     Gm.isDragging = true;
                     
                 }
-                if (Gm.isDragging == true)
+                if (Gm.isDragging == true && movement == true)
                 {
                     hit.transform.position = GetMousePos();
 
@@ -57,12 +66,25 @@ public class NewDrag : MonoBehaviour
        
     }
 
+    public void FixedUpdate()
+    {
+        foreach (GameObject detectPoint in detectPoints)
+        {
+            
+        }
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if(other.tag == "Grid")
         {
-            releasePoint = other.transform.position;
+            if(other.GetComponent<BoardPoint>().validPoint)
+            {
+                releasePoint = other.transform.position;
+            }
+
         }
+
     }
     private void OnMouseUp()
     {

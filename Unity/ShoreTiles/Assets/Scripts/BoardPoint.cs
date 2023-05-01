@@ -6,19 +6,30 @@ public class BoardPoint : MonoBehaviour
 {
     public GameManager Gm;
     public Vector3 point;
+    public bool validPoint = false;
+
     
     private void OnTriggerEnter(Collider other)
     {
-      
-        if(other.tag == "Unit")
-        {
-            Debug.Log("Enter");
-        }
+
+        
     }
     private void OnTriggerExit(Collider other)
     {
-
+       
         Gm.isDragging = false;
-        Debug.Log("Exit");
+
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.tag == "Unit")
+        {
+            validPoint = true;
+        }
+        if (other.gameObject.layer == LayerMask.NameToLayer("DetectPoint"))
+        {
+            validPoint = true;
+        }
     }
 }

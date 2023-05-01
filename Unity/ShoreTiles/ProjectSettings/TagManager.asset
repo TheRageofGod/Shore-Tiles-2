@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Unit
   - Grid
+  - DetectPoint
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Container
   - Object
   - Crab
-  - 
+  - Detect Point
   - 
   - 
   - 

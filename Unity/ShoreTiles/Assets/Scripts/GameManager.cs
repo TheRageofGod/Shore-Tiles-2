@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public int Reasorces;
     public int EnemyCount;
 
+
+    public bool UnitColl;
     public bool isDragging;
 
     public bool deployAccess = false;

@@ -6,7 +6,11 @@ TagManager:
   tags:
   - Unit
   - Grid
+<<<<<<< Updated upstream
   - DetectPoint
+=======
+  - Wave
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

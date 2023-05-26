@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CrabController : MonoBehaviour
 {
@@ -9,17 +10,22 @@ public class CrabController : MonoBehaviour
     public int Damage;
     public float movementSpeed = 0.35f;
     private bool isStopped;
+    public GameObject checker;
 
     void Update()
     {
-        if(!isStopped)
-        transform.Translate(new Vector3(movementSpeed * 0, -1, 0));
+        
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if(collision.gameObject.layer == 10)
-        {
-            isStopped = true;
-        }
+      isStopped = true;
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        isStopped = false;
+    }
+    public void Turn()
+    {
+        transform.position = checker.transform.position;
     }
 }

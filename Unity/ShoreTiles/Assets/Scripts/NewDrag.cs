@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NewDrag : MonoBehaviour
@@ -68,6 +69,7 @@ public class NewDrag : MonoBehaviour
                 transform.position = releasePoint;
                 placed = true;
                 Gm.instanced = false;
+                Ss.spaceChecker.transform.position = transform.position;
             }
             
         }
@@ -98,6 +100,16 @@ public class NewDrag : MonoBehaviour
         }
 
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Enemy")
+        {
+            other.gameObject.GetComponent<Enemy>().Damage();
+                Debug.Log("Damage");
+
+            releasePoint = nullPoint;
+        }
+    }
     private void OnMouseUp()
     {
         Gm.isDragging = false;
@@ -119,5 +131,8 @@ public class NewDrag : MonoBehaviour
         return mousePos;
     }
 
-
+    public void DestroyThis()
+    {
+        Destroy(gameObject);
+    }
 }

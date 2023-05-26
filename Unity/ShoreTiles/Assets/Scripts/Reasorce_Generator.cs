@@ -10,7 +10,7 @@ public class Reasorce_Generator : MonoBehaviour
     {
         if (GenCount <= 0)
         {
-            Reasorces = Reasorces + 1;
+            Reasorces = Reasorces + 3;
             GenCount =  1;
         }
     }

@@ -38,7 +38,7 @@ public class Deploy : MonoBehaviour
         spawnedObject.transform.SetParent(Parent);
         nameInt = nameInt + 1;
         spawnedObject.gameObject.name = "Soldier" + nameInt;
-        
+        RG.Reasorces = RG.Reasorces - 3;
         Gm.instanced = true;
     }
    
